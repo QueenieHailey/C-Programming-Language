@@ -1,4 +1,21 @@
-#include<stdio.h>
+#include <stdio.h>
+/*
+*Time:2019.11.25
+*Function:能够被4整除，不能够被100整除。或者能够被400整除的年份
+*/
+
 int main()
 {
-   
+    int year;
+    scanf("%d",&year);
+
+    if( (year%4==0 && year%100!=0 ) ||(year%400==0))
+    {
+        printf("Leap Year\n");
+    }
+    else
+    {
+        printf("Not Leap Year\n");
+    }
+    return 0;
+}
