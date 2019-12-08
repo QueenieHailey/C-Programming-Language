@@ -1,0 +1,78 @@
+#include<stdio.h>
+/*
+*Time：2019.12.8
+*Fuction：四则运算
+*Describe：把函数指针放在数组中，高性能算法
+*/
+
+//加法运算
+int add(int x,int y)
+{
+    return x + y;
+}
+
+//减法运算
+int sub(int x,int y)
+{
+    return x - y;
+}
+
+//乘法运算
+int mul(int x,int y)
+{
+    return x * y;
+}
+
+//取余运算
+
+int mod(int x,int y)
+{
+    return x % y;
+}
+
+int main()
+{
+    /*
+    int(*p1)(int,int)=NULL;
+    int(*p2)(int,int)=NUll;
+    int(*p3)(int,int)=NULL;
+    int(*p4)(int,int)=NULL;
+    
+    p1 = add;
+    p2 = sub;
+    p3 = mul;
+    p4 = mod;
+    */
+    int (* arr[4]) (int int) = {add, sub, mul, mod};  //用于指向指针数组的指针变量
+    
+    /*
+    int i;
+    for(i=0; i<4; i++)
+    {
+        printf("%d\n",arr[i](3,4) );
+    }
+    */
+    
+    int(**p)(int,int) = arr;   //用一个指针指向数组 (*p是第一个元素)
+    int res = (*p)(3,4);
+    printf("res=%d\n",res);
+    
+    return 0;
+}   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
